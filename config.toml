@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://axill86.github.io/aws-csa-associate/"
 languageCode = "en-us"
 title = "AWS Certified Solutions Architect – Associate"
 theme = "book"
