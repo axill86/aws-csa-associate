@@ -12,3 +12,4 @@ headless = true
     - [Identity and Access Management]({{< relref "/docs/iam">}})
     - [Multi-Account Management And Organization]({{< relref "/docs/multi-account">}})
 - Compute
+    - [EC2 Basics]({{< relref "/docs/ec2-basics">}})
