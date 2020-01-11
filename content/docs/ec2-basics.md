@@ -82,3 +82,36 @@ Twor types of volumes can be used with instances:
 **EBS Snapshots** can be used in order to protect against AZ failure. Created snapshots can be **replicated** across AZ or Regions if needed.
 
 **EBS** suppports a maximum per-instance throughput of **1750 MiB/S** and **80000 IOPS**. In case if that's not enough **Instance Store** considered to be used.
+
+#### Links:
+* [EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html)
+
+## EBS Snapshots
+
+### Links
+* [Incremental Snapshots](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html)
+
+* **EBS Snapshots** are _incremental_ point-in-time backup of an EBS volume stored in S3. **Initial** snapshot contains a full copy of EBS volume. Further snapshots contain only data which changed since the last backup.
+* **EBS Snapshots** can be used to replicate EBS data to another AZ or region. 
+* **EBS Snapshots** can be automated using [Amazon Data Lifecycle Manager](https://aws.amazon.com/ru/premiumsupport/knowledge-center/ebs-snapshot-data-lifecycle-manager/)
+* Permission to created snapshots can be changed even to public.
+
+## Security Groups
+
+* **Security Groups** are _Software Firewals_, which can be attached to network interface. Each _Elastic Network Interface(ENI)_ can have up to **5 Security Groups attached**
+* There are two type of rules for SG
+    * Inbound
+    * Outbound
+* Default Rule for SG is **impliciy deny**
+* In Security Group **only allow** rules are defined. **THERE ARE NO EXPLICIT DENIES !!!**
+* **Security Group** is _stateful_. It means if you allow inbound traffic (for example http connection on port 80), outbound is automatically allowed (SG operates on Level 5 of OSI model**)
+* Security Group can refer to another Security Group. That is used for example when there is a need to allow all trafic inside of SG or from another SG.
+
+
+## Instance Metadata
+* Allows to get info about instance from instance itself
+    ``http://169.254.169.254/latest/meta-data``
+
+
+### Links
+* [Instance Metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)
